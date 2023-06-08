@@ -11,6 +11,10 @@ application = Flask(__name__)
 cors = CORS(application)
 application.register_blueprint(doc_assist_app, url_prefix="/doc-assist")
 
+@application.route("/")
+def test():
+    print("Hello")
+    return "App deployed successfully!"
 
 @application.route("/doc-assist/<mount_type>")
 @application.route("/doc-assist")
